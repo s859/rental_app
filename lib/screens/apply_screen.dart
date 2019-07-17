@@ -217,10 +217,8 @@ class _ApplyScreenState extends State<ApplyScreen> {
       child: Scaffold(
         backgroundColor: Colors.amber[50],
         body: ListView(
-//    return Container(
           padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 4.0),
           children: <Widget>[
-//        Builder(
             Form(
               key: _formKey,
               child: Container(
