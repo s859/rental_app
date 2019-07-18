@@ -377,7 +377,7 @@ class _ApplyScreenState extends State<ApplyScreen> {
                             keyboardType: TextInputType.number,
                             decoration: kTextFieldDecoration.copyWith(
                                 hintText: 'Social Security #'),
-                            obscureText: true,
+//                            obscureText: true,
                             controller: _ssnTextController,
                             onSaved: (String value) {
                               applicant.ssn = value;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rental_app/screens/home_screen.dart';
 import 'package:rental_app/screens/apply_screen.dart';
-import 'package:rental_app/screens/listings_screen.dart';
+import 'package:rental_app/screens/calc_screen.dart';
 
 void main() {
 //  debugPaintSizeEnabled = true;
@@ -25,7 +25,7 @@ class RentalApp extends StatelessWidget {
         routes: {
           HomeScreen.id: (context) => HomeScreen(),
           ApplyScreen.id: (context) => ApplyScreen(),
-          ListingsScreen.id: (context) => ListingsScreen(),
+          CalcScreen.id: (context) => CalcScreen(),
         });
   }
 }
