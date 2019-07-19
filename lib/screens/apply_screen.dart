@@ -110,6 +110,8 @@ class _ApplyScreenState extends State<ApplyScreen> {
   final SocSecTextInputFormatter _socSecNumberFormatter =
       SocSecTextInputFormatter();
 
+  final ZipTextInputFormatter _zipTextInputFormatter = ZipTextInputFormatter();
+
   final UsDateTextInputFormatter _dateTextInputFormatter =
       UsDateTextInputFormatter();
 
@@ -201,7 +203,7 @@ class _ApplyScreenState extends State<ApplyScreen> {
         return 'Invalid';
       }
     }
-    return 'Invalid';
+    return '5 or 9 digits';
   }
 
   Widget rowspacer = Container(
@@ -503,7 +505,8 @@ class _ApplyScreenState extends State<ApplyScreen> {
                             // TextInputFormatters are applied in sequence.
                             inputFormatters: <TextInputFormatter>[
                               LengthLimitingTextInputFormatter(10),
-                              WhitelistingTextInputFormatter(RegExp("[0-9-]")),
+                              WhitelistingTextInputFormatter.digitsOnly,
+                              _zipTextInputFormatter,
                             ],
                           ),
                         ),
@@ -515,12 +518,10 @@ class _ApplyScreenState extends State<ApplyScreen> {
                     ),
                     rowspacer,
                     Row(children: <Widget>[
-//                      _image == null
                       applicant.licenseImageFile == null
                           ? Text('No license captured.')
                           : Image.file(applicant.licenseImageFile,
                               height: 250.0, width: 340.0),
-//                          : Image.file(_image, height: 250.0, width: 340.0),
                     ]),
                     rowspacer,
                     Row(children: <Widget>[

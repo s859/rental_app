@@ -23,8 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
       _loading = true;
     });
 
-//    const url = 'http://lexingtonrentalhomes.com/forrentlist.asp';
-    const url = 'https://www.google.com';
+    const url = 'http://lexingtonrentalhomes.com/forrentlist.asp';
+//    const url = 'https://www.google.com';
     if (await canLaunch(url)) {
       await launch(
         url,
@@ -49,17 +49,20 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Stack(
           children: <Widget>[
             Center(
-              child: Image.asset('images/LexingtonHouse2.jpg',
+              // Use a square image with boxFit.cover so the image covers
+              // the screen in portrait and landscape without distorting
+              // the aspect ratio
+              child: Image.asset('images/LexingtonHousesSquare.jpg',
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  fit: BoxFit.fill),
+                  fit: BoxFit.cover),
             ),
             Container(
-              margin: EdgeInsets.all(15.0),
+              margin: EdgeInsets.fromLTRB(40.0, 60.0, 0.0, 0.0),
               decoration: BoxDecoration(
 //                  color: Colors.brown[100],
                   border: Border.all(
-                    width: 1.0,
+                    width: 2.0,
                     color: Colors.black,
                   ),
                   borderRadius: BorderRadius.circular(10.0)),
@@ -70,10 +73,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   TyperAnimatedTextKit(
-                    text: ['Properties'],
+                    text: ['Rental App'],
                     textStyle: TextStyle(
+//                      color: Color(0xC55B11),
                       fontSize: 20.0,
-//                    fontWeight: FontWeight.w900,
+                      fontStyle: FontStyle.italic,
                     ),
                     textAlign: TextAlign.start,
                   ),
@@ -81,12 +85,12 @@ class _HomeScreenState extends State<HomeScreen> {
 //                    style:
 //                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   SizedBox(
-                    height: 30.0,
+                    height: 25.0,
                   ),
                   Image.asset('images/RentalApp.png',
-                      width: 100, height: 100, fit: BoxFit.cover),
+                      width: 90, height: 90, fit: BoxFit.cover),
                   SizedBox(
-                    height: 60.0,
+                    height: 40.0,
                   ),
                   RoundedButton(
                     title: 'Rental Application',

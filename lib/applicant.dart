@@ -1,6 +1,7 @@
 import 'dart:io' as io;
 import 'dart:convert';
 import 'package:path_provider/path_provider.dart';
+import 'package:flutter_mailer/flutter_mailer.dart';
 
 class Applicant {
   String applicantJson;
@@ -69,6 +70,35 @@ class Applicant {
     print(state);
     print(zip);
     print(licenseImageFilePath);
+
+    var mailBody = """
+      <html>
+      <h1>Rental Application</h1>
+      <br>
+      <p><b>Name:<b> $name</p>
+      <p><b>Cell phone:<b> $cellPhoneNumber</p>
+      <p><b>Work phone:<b> $workPhoneNumber</p>
+      <p><b>Birthday:<b> $birthday</p>
+      <p><b>email:<b> $email</p>
+      <p><b>Social Security Number<b> shouldn't be emailed.</p>
+      <p><b>Address</p>
+      <p>$street</p>
+      <p>$city, $state $zip</p>
+      </html>""";
+
+    final MailOptions mailOptions = MailOptions(
+      body: mailBody,
+      subject: 'Rental Application for $name',
+      recipients: ['nobody@gmail.com'],
+      isHTML: true,
+      bccRecipients: [''],
+      ccRecipients: [''],
+      attachments: [
+        licenseImageFilePath,
+      ],
+    );
+
+    await FlutterMailer.send(mailOptions);
   }
 
   saveApplicant() {

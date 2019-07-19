@@ -57,6 +57,41 @@ class SocSecTextInputFormatter extends TextInputFormatter {
       if (newValue.selection.end >= 5) selectionIndex++;
     }
 
+//    String workstring = oldValue.toString();
+//    print("oldValue $workstring");
+//    workstring = newValue.toString();
+//    print("newValue $workstring");
+//    print("usedSubstringIndex $usedSubstringIndex");
+//    print("selectionIndex $selectionIndex");
+
+    if (newTextLength >= usedSubstringIndex) {
+      newText.write(newValue.text.substring(usedSubstringIndex));
+    }
+
+    return TextEditingValue(
+      text: newText.toString(),
+      selection: TextSelection.collapsed(offset: selectionIndex),
+    );
+  }
+}
+
+/// Format zipcode in format #####-####
+class ZipTextInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    final int newTextLength = newValue.text.length;
+    int selectionIndex = newValue.selection.end;
+    int usedSubstringIndex = 0;
+    final StringBuffer newText = StringBuffer();
+
+    if (newTextLength >= 6) {
+      newText.write(newValue.text.substring(0, usedSubstringIndex = 5) + '-');
+      if (newValue.selection.end >= 5) selectionIndex++;
+    }
+
     if (newTextLength >= usedSubstringIndex) {
       newText.write(newValue.text.substring(usedSubstringIndex));
     }
@@ -75,12 +110,6 @@ class UsDateTextInputFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-//    String mysubstring;
-//    String workstring = oldValue.toString();
-//    print("oldValue $workstring");
-//    workstring = newValue.toString();
-//    print("newValue $workstring");
-
     final int newTextLength = newValue.text.length;
     int selectionIndex = newValue.selection.end;
     int usedSubstringIndex = 0;
