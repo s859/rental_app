@@ -11,4 +11,4 @@ The intent of sharing on GitHub is to allow others to sample specific TextFormFi
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE] file for details
