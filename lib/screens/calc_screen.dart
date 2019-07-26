@@ -29,8 +29,6 @@ class _CalcScreenState extends State<CalcScreen> {
 
   @override
   Widget build(BuildContext context) {
-//    sleep(const Duration(seconds: 1));
-//    setState(() {});
 
     return SafeArea(
       child: Scaffold(
