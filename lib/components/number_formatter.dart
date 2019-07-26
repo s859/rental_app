@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 
-/// Format incoming numeric text to fit the format of (###) ###-####
+/// Format a phone number in format (###) ###-####
 class UsPhoneTextInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
@@ -56,13 +56,6 @@ class SocSecTextInputFormatter extends TextInputFormatter {
       newText.write(newValue.text.substring(3, usedSubstringIndex = 5) + '-');
       if (newValue.selection.end >= 5) selectionIndex++;
     }
-
-//    String workstring = oldValue.toString();
-//    print("oldValue $workstring");
-//    workstring = newValue.toString();
-//    print("newValue $workstring");
-//    print("usedSubstringIndex $usedSubstringIndex");
-//    print("selectionIndex $selectionIndex");
 
     if (newTextLength >= usedSubstringIndex) {
       newText.write(newValue.text.substring(usedSubstringIndex));

@@ -29,7 +29,7 @@ class _ApplyScreenState extends State<ApplyScreen> {
     var image = await ImagePicker.pickImage(
         source: ImageSource.camera, maxHeight: 250.0, maxWidth: 340.0);
 
-    applicant.licenseImageFile = image;
+//    applicant.licenseImageFile = image;
 
     setState(() {
       applicant.licenseImageFile = image;
@@ -177,8 +177,6 @@ class _ApplyScreenState extends State<ApplyScreen> {
         RegExp(r"A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|"
             r"M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|"
             r"V[AIT]|W[AIVY]");
-//    final RegExp stateExp = RegExp(
-//        r'AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MP|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY');
     if (!stateExp.hasMatch(value)) return 'Invalid';
     return null;
   }
@@ -618,7 +616,6 @@ class _ApplyScreenState extends State<ApplyScreen> {
                 ),
               ),
             ),
-//        ),
           ],
         ),
       ),

@@ -59,18 +59,6 @@ class Applicant {
   }
 
   void processApplication() async {
-    print(name);
-    print(cellPhoneNumber);
-    print(workPhoneNumber);
-    print(email);
-    print(birthday);
-    print(ssn);
-    print(street);
-    print(city);
-    print(state);
-    print(zip);
-    print(licenseImageFilePath);
-
     var mailBody = """
       <html>
       <h1>Rental Application</h1>
