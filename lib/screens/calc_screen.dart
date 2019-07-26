@@ -29,7 +29,6 @@ class _CalcScreenState extends State<CalcScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.amber[50],
