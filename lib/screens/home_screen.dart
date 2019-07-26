@@ -17,14 +17,13 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _loading = false;
 
   Future<void> _launchURL() async {
-//    const url = 'https://www.realiantpm.com/central-ky-rentals';
+    // Set this to the website you want to view in the app
+    const url = 'https://zzzzzzzzzzzzzzzzzzzzzzzzzzzz';
 
     setState(() {
       _loading = true;
     });
 
-    const url = 'http://lexingtonrentalhomes.com/forrentlist.asp';
-//    const url = 'https://www.google.com';
     if (await canLaunch(url)) {
       await launch(
         url,
